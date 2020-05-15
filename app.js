@@ -7,12 +7,106 @@ const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-
 const render = require("./lib/htmlRenderer");
-
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+
+function promptUser() {
+  return inquirer.prompt([
+    {
+      type: "list",
+      name: "role",
+      message: "Which type of team member would you like to add?",
+      choices: [
+        "Manager",
+        "Engineer",
+        "Intern",
+        "I don't want to add any more team members",
+      ],
+    },
+  ]);
+}
+
+function promptManager() {
+  return inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is your manager's name?",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "What is your manager's id?",
+    },
+    {
+      type: "input",
+      message: "What is your manager's email?",
+      name: "email",
+    },
+    {
+      type: "input",
+      name: "office",
+      message: "What is your manager's office number?",
+    },
+  ]);
+}
+
+function promptEngineer() {
+  return inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is your engineer's name?",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "What is your engineer's id?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is your engineer's email?",
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "What is your engineer's Github username?",
+    },
+  ]);
+}
+
+function promptIntern() {
+  return inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is your intern's name?",
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "What is your intern's id?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is your intern's email?",
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "Where does your intern go to?",
+    },
+  ]);
+}
+
+const employees = [];
+const manager = new Manager(this.name, this.id, this.email, this.officeNumber);
+const intern = new Intern(this.name, this.id, this.email, this.school);
+const engineer = new Engineer(this.name, this.id, this.email, this.github);
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
