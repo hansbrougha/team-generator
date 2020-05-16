@@ -1,18 +1,23 @@
+//Dependencies
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+
+//NPM Packages
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+//Render Path
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-
+////////////////////////////////////////////////////////////
 //Inquirer Prompts for Employee Type
+//How do I run this so prompts ask about specific employee type?
 function promptUser() {
   return inquirer.prompt([
     {
@@ -23,12 +28,12 @@ function promptUser() {
         "Manager",
         "Engineer",
         "Intern",
-        "I don't want to add any more team members",
+        "I don't want to add any more team members.",
       ],
     },
   ]);
 }
-//Inquirer Prompts for Manager
+//Inquirer Prompts for Manager////////////////////////////
 function promptManager() {
   return inquirer.prompt([
     {
@@ -53,7 +58,7 @@ function promptManager() {
     },
   ]);
 }
-//Inquirer Prompts for Engineer
+//Inquirer Prompts for Engineer//////////////////
 function promptEngineer() {
   return inquirer.prompt([
     {
@@ -78,7 +83,7 @@ function promptEngineer() {
     },
   ]);
 }
-//Inquirer Prompts for Intern
+//Inquirer Prompts for Intern///////////////////////
 function promptIntern() {
   return inquirer.prompt([
     {
@@ -103,12 +108,44 @@ function promptIntern() {
     },
   ]);
 }
-
+//////////////////////////////////////////
+//What Type of function do I write to render html page?
+//Code I almost adapted for readme homework
+//async function init() {
+//  console.log("Hi");
+//  try {
+//    const answers = await promptUser();
+//
+//    const html = generateHTML(answers);
+//
+//    await writeFileAsync("team.html", html);
+//
+//    console.log("Successfully wrote to index.html");
+//  } catch (err) {
+//    console.error(err);
+//  }
+//}
+//
+//init();
+//Code I used to generate readme
+//promptUser()
+//  .then((responses) => {
+//    const md = generateMarkdown(responses);
+//    return writeFileAsync("README2.md", md);
+//  })
+//  .then(() => {
+//    console.log("Successfully wrote to README.md");
+//  })
+//  .catch((err) => {
+//    console.log(err);
+//  });
+//
 //Employees Variable (Empty)
 const employees = [];
 
 //Add Employee Variable
 const addEmployee = promptUser();
+employees.push(employee);
 
 //Add Manager Variables
 const addManager = promptManager();
@@ -159,4 +196,3 @@ employees.push(engineer);
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
-© 2020 GitHub, Inc.
