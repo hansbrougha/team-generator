@@ -128,7 +128,14 @@ const intern = new Intern(
   addIntern.school
 );
 
-const engineer = new Engineer(this.name, this.id, this.email, this.github);
+//Add Engineer Variables
+const addEngineer = promptEngineer();
+const engineer = new Engineer(
+  addEngineer.name,
+  addEngineer.id,
+  addEngineer.email,
+  addEngineer.github
+);
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
