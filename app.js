@@ -12,6 +12,7 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
+//Inquirer Prompts for Employee Type
 function promptUser() {
   return inquirer.prompt([
     {
@@ -118,7 +119,14 @@ const manager = new Manager(
   addManager.officeNumber
 );
 
-const intern = new Intern(this.name, this.id, this.email, this.school);
+//Add Intern Variables
+const addIntern = promptIntern();
+const intern = new Intern(
+  addIntern.name,
+  addIntern.id,
+  addIntern.email,
+  addIntern.school
+);
 
 const engineer = new Engineer(this.name, this.id, this.email, this.github);
 
