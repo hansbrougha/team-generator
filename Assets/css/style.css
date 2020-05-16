@@ -1,0 +1,14 @@
+.list-group {
+  padding: 10px;
+  margin: 10px;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  background-color: rgb(229, 229, 243);
+}
+
+.list-group-item {
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+}
