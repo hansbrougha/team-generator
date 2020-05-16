@@ -118,6 +118,7 @@ const manager = new Manager(
   addManager.email,
   addManager.officeNumber
 );
+employees.push(manager);
 
 //Add Intern Variables
 const addIntern = promptIntern();
@@ -127,6 +128,7 @@ const intern = new Intern(
   addIntern.email,
   addIntern.school
 );
+employees.push(intern);
 
 //Add Engineer Variables
 const addEngineer = promptEngineer();
@@ -136,6 +138,7 @@ const engineer = new Engineer(
   addEngineer.email,
   addEngineer.github
 );
+employees.push(engineer);
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
