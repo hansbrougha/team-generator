@@ -27,7 +27,7 @@ function promptUser() {
     },
   ]);
 }
-
+//Inquirer Prompts for Manager
 function promptManager() {
   return inquirer.prompt([
     {
@@ -52,7 +52,7 @@ function promptManager() {
     },
   ]);
 }
-
+//Inquirer Prompts for Engineer
 function promptEngineer() {
   return inquirer.prompt([
     {
@@ -77,7 +77,7 @@ function promptEngineer() {
     },
   ]);
 }
-
+//Inquirer Prompts for Intern
 function promptIntern() {
   return inquirer.prompt([
     {
@@ -103,9 +103,23 @@ function promptIntern() {
   ]);
 }
 
+//Employees Variable (Empty)
 const employees = [];
-const manager = new Manager(this.name, this.id, this.email, this.officeNumber);
+
+//Add Employee Variable
+const addEmployee = promptUser();
+
+//Add Manager Variables
+const addManager = promptManager();
+const manager = new Manager(
+  addManager.name,
+  addManager.id,
+  addManager.email,
+  addManager.officeNumber
+);
+
 const intern = new Intern(this.name, this.id, this.email, this.school);
+
 const engineer = new Engineer(this.name, this.id, this.email, this.github);
 
 // After the user has input all employees desired, call the `render` function (required
@@ -127,3 +141,4 @@ const engineer = new Engineer(this.name, this.id, this.email, this.github);
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+© 2020 GitHub, Inc.
