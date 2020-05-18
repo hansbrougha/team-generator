@@ -150,7 +150,7 @@ function promptIntern() {
       {
         type: "input",
         name: "school",
-        message: "Where does your intern go to?",
+        message: "Where does your intern go to school?",
       },
     ])
     .then((answers) => {
